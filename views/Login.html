@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/Common.css" />
+    <link rel="stylesheet" href="../css/titleBar.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+    <link rel="stylesheet" href="../css//LoginWindow.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="titleBar">
+        <div class="title noSelect">
+          <img src="../assets/icon.png" />
+          Login
+        </div>
+
+        <div class="windowControls">
+          <ul>
+            <li>
+              <button id="minimize"><div></div></button>
+            </li>
+            <li>
+              <button id="quit" class="danger"><div>x</div></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contentContainer">
+        <div style="margin: auto;" id="dataContainer">
+          <div class="FormArea" style="border: none; width: 100%;">
+            <form>
+              <div class="form-row">
+                <label for="username" class="noSelect">Username</label>
+                <input type="text" id="username" />
+              </div>
+              <div class="form-row">
+                <label for="password" class="noSelect">Password</label>
+                <input type="password" id="password" />
+              </div>
+            </form>
+            <button id="login">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/windowControls.js"></script>
+    <script src="../js/authHandler.js"></script>
+  </body>
+</html>
