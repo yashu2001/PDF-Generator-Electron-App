@@ -1,0 +1,20 @@
+{
+  "name": "pdf_generator",
+  "version": "1.0.0",
+  "description": "This is an application which will generate Pdf's using coordinates",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Yash Narang",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "electron": "^11.1.1",
+    "jspdf": "^2.2.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5",
+    "sqlite3": "^5.0.1"
+  }
+}
