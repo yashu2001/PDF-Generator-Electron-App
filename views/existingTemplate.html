@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pdf Generator</title>
+    <link rel="stylesheet" href="../css/mainWindow.css" />
+    <link rel="stylesheet" href="../css/Common.css" />
+    <link rel="stylesheet" href="../css/titleBar.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="titleBar">
+        <div class="title noSelect">
+          <img src="../assets/icon.png" />
+          Pdf Generator
+        </div>
+
+        <div class="windowControls">
+          <ul>
+            <li>
+              <button id="minimize"><div></div></button>
+            </li>
+            <li>
+              <button id="maximize"><div></div></button>
+            </li>
+            <li>
+              <button id="quit" class="danger"><div>x</div></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contentContainer">
+        <div class="resizable">
+          <div class="FormArea">
+            <form>
+              <div class="form-row">
+                <label for="templateName" class="noSelect">Template</label>
+                <select id="templateName" class="noSelect"> </select>
+              </div>
+              <div class="form-row">
+                <label for="dataText" class="noSelect">Label Text</label>
+                <textarea id="dataText" rows="4"></textarea>
+              </div>
+            </form>
+            <button id="generatePDF" class="noSelect">Generate PDF</button>
+          </div>
+        </div>
+        <div class="pdfArea" id="pdfParent">
+          <p class="noSelect">
+            Please Enter all required details and click generate PDF
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/windowControls.js"></script>
+    <script src="../js/templatePDFController.js"></script>
+  </body>
+</html>
