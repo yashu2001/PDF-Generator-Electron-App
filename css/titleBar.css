@@ -1,0 +1,70 @@
+/* Styles for Title Bar */
+.titleBar {
+  background-color: #778899;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.title {
+  color: #fff;
+  -webkit-app-region: drag;
+}
+
+.title > img {
+  height: 20px;
+  width: 20px;
+  object-fit: fill;
+  margin: 2px 0;
+}
+
+.windowControls > ul {
+  list-style: none;
+  padding-right: 10px;
+  height: 100%;
+}
+
+.windowControls > ul > li {
+  display: inline-block;
+  height: 100%;
+}
+
+.windowControls > ul > li > button {
+  height: 95%;
+  width: 100%;
+  margin: 0;
+  padding: 0 5px;
+  cursor: pointer;
+  background-color: #778899;
+  outline: none;
+  border: none;
+}
+
+.windowControls > ul > li > button:hover {
+  background-color: #b0c4de;
+}
+
+.windowControls > ul > li > button.danger:hover {
+  background-color: #ff0000 !important;
+}
+
+#minimize > div {
+  height: 2px;
+  background-color: #fff;
+  width: 10px;
+  margin-bottom: 3px;
+}
+
+#maximize > div {
+  border: 1px solid white;
+  border-color: #fff;
+  border-width: 1px;
+  height: 10px;
+  width: 10px;
+  color: #fff;
+}
+
+#quit > div {
+  color: #fff;
+  width: 10px;
+}

@@ -1,0 +1,40 @@
+/* Media queries */
+
+@media (min-width: 900px) {
+  .resizable {
+    /* resize: horizontal; */
+    width: 20vw !important;
+    overflow: hidden;
+  }
+}
+
+/* ContentContainerStyles */
+
+.contentContainer {
+  background-color: #202020;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  overflow-y: hidden;
+}
+
+/* Form Area styles */
+.resizable {
+  width: 30vw;
+  overflow: hidden;
+}
+
+/* PDF AREA STYLES */
+.pdfArea > p {
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  color: #fff;
+  margin-top: 40vh;
+  overflow: hidden;
+}
+
+#pdfParent > iframe {
+  height: 100%;
+  width: 100%;
+  margin-left: auto;
+}
