@@ -3,17 +3,28 @@
   "version": "1.0.0",
   "description": "This is an application which will generate Pdf's using coordinates",
   "main": "main.js",
+  "build": {
+    "appId": "pdf.generator",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    }
+  },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder build"
   },
   "author": "Yash Narang",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "electron": "^11.1.1",
     "jspdf": "^2.2.0",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5",
     "sqlite3": "^5.0.1"
+  },
+  "devDependencies": {
+    "electron-builder": "^22.9.1",
+    "electron": "^11.1.1"
   }
 }
