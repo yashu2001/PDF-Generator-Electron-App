@@ -41,7 +41,7 @@ bckp.addEventListener("click", () => {
 
         // Creating and Writing Backup
         fs.copyFileSync(
-          path.join(__dirname, "../main.sqlite"),
+          path.join(__dirname, "../../../main.sqlite"),
           file.filePath.toString()
         );
       }
@@ -68,7 +68,7 @@ rest.addEventListener("click", () => {
         // Overwriting existing db
         fs.copyFileSync(
           d.filePaths[0].toString(),
-          path.join(__dirname, "../main.sqlite")
+          path.join(__dirname, "../../../main.sqlite")
         );
       }
     })
