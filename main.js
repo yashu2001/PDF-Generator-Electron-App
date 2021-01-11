@@ -77,7 +77,7 @@ ipcMain.on("auth", (e, args) => {
     createWindow(550, 700, "./views/newTemplate.html");
   } else if (args.role === "admin") {
     // Load admin view
-    createWindow(250, 200, "./views/adminOptions.html");
+    createWindow(550, 700, "./views/adminOptions.html");
   } else {
     // Load User view
     createWindow(550, 700, "./views/existingTemplate.html");
