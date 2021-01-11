@@ -4,6 +4,7 @@ const electron = require("electron");
 const fs = require("fs");
 const path = require("path");
 const dialog = electron.remote.dialog;
+const ipcRenderer = electron.ipcRenderer;
 
 // HTML Mappings
 
@@ -14,6 +15,7 @@ const rest = document.getElementById("restore");
 
 // Event listeners
 
+// Backup listener
 bckp.addEventListener("click", () => {
   dialog
     .showSaveDialog(electron.remote.getCurrentWindow(), {
@@ -48,6 +50,8 @@ bckp.addEventListener("click", () => {
       console.log(err);
     });
 });
+
+// Restore listener
 rest.addEventListener("click", () => {
   dialog
     .showOpenDialog(electron.remote.getCurrentWindow(), {
@@ -71,4 +75,14 @@ rest.addEventListener("click", () => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+// Existing template
+pfet.addEventListener("click", () => {
+  ipcRenderer.send("admin",{screen:"existingTemplate.html"})
+});
+
+// New template
+pnt.addEventListener("click", () => {
+  ipcRenderer.send("admin",{screen:"newTemplate.html"})
 });

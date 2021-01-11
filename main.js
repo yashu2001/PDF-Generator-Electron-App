@@ -84,3 +84,9 @@ ipcMain.on("auth", (e, args) => {
   }
   BrowserWindow.getAllWindows()[1].close();
 });
+
+// Admin Listener
+ipcMain.on("admin", (e, args) => {
+  createWindow(550, 700, `./views/${args.screen}`);
+  BrowserWindow.getAllWindows()[1].close();
+});
