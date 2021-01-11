@@ -67,6 +67,21 @@ const createUser = (params) => {
   });
 };
 
+const updateUser = async (params) => {
+  const user = await User.findAll({
+    where: {
+      username: params.username,
+    },
+  });
+  if (!user.length) {
+    return { error: true, message: "User not found" };
+  }
+  await user[0].update({
+    password: bcrypt.hashSync(params.pass, bcrypt.genSaltSync(10)),
+  });
+  return { error: false, message: "Updated successfully" };
+};
+
 const syncSchemas = () => {
   return Promise.all([User.sync(), Template.sync()]);
 };
@@ -126,4 +141,5 @@ module.exports = {
   createTemplate,
   fetchTemplatesList,
   fetchTemplateByName,
+  updateUser,
 };
