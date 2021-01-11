@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/Common.css" />
+    <link rel="stylesheet" href="../css/titleBar.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+    <link rel="stylesheet" href="../css//LoginWindow.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="titleBar">
+        <div class="title noSelect">
+          <img src="../assets/icon.png" />
+          Super User
+        </div>
+
+        <div class="windowControls">
+          <ul>
+            <li>
+              <button id="minimize"><div></div></button>
+            </li>
+            <li>
+              <button id="quit" class="danger"><div>x</div></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contentContainer">
+        <div style="margin: auto;" id="dataContainer">
+          <div class="FormArea" id="FormArea" style="border: none; width: 100%;">
+            <div class="form-row noSelect">
+              <label for="username">Username</label>
+              <input type="text" class="noSelect" id="username" />
+            </div>
+            <div class="form-row noSelect">
+              <label for="password">Password</label>
+              <input type="text" class="noSelect" id="password" />
+            </div>
+            <button id="update">Update Password</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/windowControls.js"></script>
+    <script src="../js/sudoController.js"></script>
+  </body>
+</html>
