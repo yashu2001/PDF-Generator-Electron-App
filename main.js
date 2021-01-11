@@ -74,7 +74,7 @@ app.on("activate", () => {
 ipcMain.on("auth", (e, args) => {
   if (args.role === "super-admin") {
     // Load super-admin view
-    createWindow(550, 700, "./views/newTemplate.html");
+    createWindow(550, 700, "./views/root.html");
   } else if (args.role === "admin") {
     // Load admin view
     createWindow(550, 700, "./views/adminOptions.html");
@@ -87,6 +87,5 @@ ipcMain.on("auth", (e, args) => {
 
 // Admin Listener
 ipcMain.on("admin", (e, args) => {
-  createWindow(550, 700, `./views/${args.screen}`);
-  BrowserWindow.getAllWindows()[1].close();
+  BrowserWindow.getAllWindows()[0].loadFile(`./views/${args.screen}`);
 });
