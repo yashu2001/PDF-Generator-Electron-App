@@ -6,6 +6,7 @@
   "build": {
     "appId": "pdf.generator",
     "asar":false,
+    "productName":"Label Generator",
     "win": {
       "target": "nsis",
       "icon": "assets/icon.ico"
