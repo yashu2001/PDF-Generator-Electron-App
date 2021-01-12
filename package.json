@@ -5,6 +5,7 @@
   "main": "main.js",
   "build": {
     "appId": "pdf.generator",
+    "asar":false,
     "win": {
       "target": "nsis",
       "icon": "assets/icon.ico"
@@ -12,7 +13,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder build"
+    "dist": "electron-builder build --ia32"
   },
   "author": "Yash Narang",
   "license": "MIT",

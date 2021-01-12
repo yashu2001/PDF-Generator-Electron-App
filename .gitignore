@@ -2,3 +2,4 @@ node_modules
 main.sqlite
 backups/
 dist
+dist_64bit
