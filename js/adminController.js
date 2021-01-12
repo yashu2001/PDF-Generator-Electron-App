@@ -12,6 +12,7 @@ const pfet = document.getElementById("pfet");
 const pnt = document.getElementById("pnt");
 const bckp = document.getElementById("bckp");
 const rest = document.getElementById("restore");
+const logout = document.getElementById("logout");
 
 // Event listeners
 
@@ -52,6 +53,7 @@ bckp.addEventListener("click", () => {
 });
 
 // Restore listener
+
 rest.addEventListener("click", () => {
   dialog
     .showOpenDialog(electron.remote.getCurrentWindow(), {
@@ -77,12 +79,23 @@ rest.addEventListener("click", () => {
     });
 });
 
+// Logout listenter
+
+logout.addEventListener("click", () => {
+  localStorage.setItem("userType", null);
+  ipcRenderer.send("admin", { screen: "Login.html" });
+});
+
 // Existing template
+
 pfet.addEventListener("click", () => {
-  ipcRenderer.send("admin",{screen:"existingTemplate.html"})
+  localStorage.setItem("userType", "admin");
+  ipcRenderer.send("admin", { screen: "existingTemplate.html" });
 });
 
 // New template
+
 pnt.addEventListener("click", () => {
-  ipcRenderer.send("admin",{screen:"newTemplate.html"})
+  localStorage.setItem("userType", "admin");
+  ipcRenderer.send("admin", { screen: "newTemplate.html" });
 });
