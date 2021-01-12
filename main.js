@@ -52,7 +52,7 @@ function createWindow(minHeight, minWidth, uri) {
         name: "Label-1",
         document_height: 248,
         document_width: 165,
-        font_size: 11,
+        font_size: 10,
         document_orientation: "portrait",
         coordinates: [
           { x: "25", y: "89" },

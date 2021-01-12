@@ -101,6 +101,7 @@ generatePDF.addEventListener("click", (e) => {
     unit: "mm",
     format: [height, width],
   });
+  doc.setFont("Times New Roman ");
   doc.setFontSize(fontSize);
   // Inserting data
   for (let i = 0; i < Coordinates; i++) {
