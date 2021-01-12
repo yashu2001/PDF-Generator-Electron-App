@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Pdf Generator</title>
+    <title>Label Generator</title>
     <link rel="stylesheet" href="../css/mainWindow.css" />
     <link rel="stylesheet" href="../css/Common.css" />
     <link rel="stylesheet" href="../css/titleBar.css" />
     <link rel="stylesheet" href="../css/form.css" />
+    <link rel="stylesheet" href="../css/MenuBar.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container-3r">
       <div class="titleBar">
         <div class="title noSelect">
           <img src="../assets/icon.png" />
-          Pdf Generator
+          Label Generator
         </div>
-
         <div class="windowControls">
           <ul>
             <li>
@@ -29,7 +29,12 @@
           </ul>
         </div>
       </div>
-
+      <div class="MenuBar" id="menubar">
+        <ul id="menubar-list">
+          <li><button id="back">Back</button></li>
+          <li><button id="logout">Logout</button></li>
+        </ul>
+      </div>
       <div class="contentContainer">
         <div class="resizable">
           <div class="FormArea">
@@ -88,5 +93,6 @@
 
     <script src="../js/windowControls.js"></script>
     <script src="../js/pdfController.js"></script>
+    <script src="../js/menuControls.js"></script>
   </body>
 </html>
