@@ -1,0 +1,23 @@
+/* Menu bar styles */
+.MenuBar {
+  background-color: #36c360;
+  width: 100vw;
+}
+.MenuBar > ul {
+  list-style: none;
+}
+.MenuBar > ul > li {
+  display: inline-block;
+  margin: 4px;
+}
+.MenuBar > ul > li > button {
+  background-color: #36c360;
+  outline: none;
+  border: none;
+  display: inline;
+  color: #fff;
+}
+.MenuBar > ul > li > button:hover {
+  background-color: #62e98b;
+  cursor: pointer;
+}

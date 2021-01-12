@@ -5,7 +5,13 @@
   margin: 0;
   padding: 0;
 }
-.container {
+.container-3r {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  overflow: hidden;
+}
+.container-2r {
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
