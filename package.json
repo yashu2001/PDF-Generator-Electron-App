@@ -1,12 +1,12 @@
 {
-  "name": "pdf_generator",
-  "version": "1.0.0",
+  "name": "label_generator",
+  "version": "1.1.0",
   "description": "This is an application which will generate Pdf's using coordinates",
   "main": "main.js",
   "build": {
-    "appId": "pdf.generator",
-    "asar":false,
-    "productName":"Label Generator",
+    "appId": "label.generator",
+    "asar": false,
+    "productName": "Label Generator",
     "win": {
       "target": "nsis",
       "icon": "assets/icon.ico"
@@ -14,9 +14,10 @@
   },
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder build --ia32"
+    "dist-32": "electron-builder build --ia32",
+    "dist-64": "electron-builder build --x64"
   },
-  "author": "Yash Narang",
+  "author": "Gypcom",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
