@@ -61,6 +61,23 @@ function createWindow(minHeight, minWidth, uri) {
           { x: "100", y: "205" },
         ],
       });
+      await DB.AddColor("Beige");
+      await DB.AddColor("Rosewood");
+      const thicknessarr = [12, 15, 18, 20, 25, 30];
+      thicknessarr.map(async (thickness) => {
+        await DB.AddThickness(thickness);
+      });
+      const sizesArr = [
+        { length: 2438.4, breadth: 1219.2 },
+        { length: 2438.4, breadth: 914.4 },
+        { length: 2743.2, breadth: 1219.2 },
+        { length: 2743.2, breadth: 914.4 },
+        { length: 1828.8, breadth: 1219.2 },
+        { length: 1828.8, breadth: 914.4 },
+      ];
+      sizesArr.map(async (size) => {
+        await DB.AddSize(size);
+      });
     }
     app
       .whenReady()
