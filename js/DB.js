@@ -1,12 +1,17 @@
 // Importing DB ORM
+
 const Sequelize = require("sequelize");
 const bcrypt = require("bcryptjs");
+
 // Creating main instance
+
 const sequelize = new Sequelize({
   dialect: "sqlite",
   storage: "./main.sqlite",
 });
+
 // Method to Authenticate the connection
+
 const AuthenticateConnection = () => {
   sequelize
     .authenticate()
@@ -49,6 +54,7 @@ const User = sequelize.define("user", {
 });
 
 // Template Model
+
 const Template = sequelize.define("template", {
   name: Sequelize.STRING,
   document_height: Sequelize.NUMBER,
@@ -56,6 +62,25 @@ const Template = sequelize.define("template", {
   font_size: Sequelize.NUMBER,
   document_orientation: Sequelize.STRING,
   coordinates: Sequelize.JSON,
+});
+
+// Color Model
+
+const Color = sequelize.define("color", {
+  name: Sequelize.STRING,
+});
+
+// Thickness Model
+
+const Thickness = sequelize.define("thickness", {
+  thickness: Sequelize.NUMBER,
+});
+
+// Size Model
+
+const Size = sequelize.define("size", {
+  length: Sequelize.NUMBER,
+  breadth: Sequelize.NUMBER,
 });
 
 // DB Methods
@@ -83,7 +108,13 @@ const updateUser = async (params) => {
 };
 
 const syncSchemas = () => {
-  return Promise.all([User.sync(), Template.sync()]);
+  return Promise.all([
+    User.sync(),
+    Template.sync(),
+    Color.sync(),
+    Thickness.sync(),
+    Size.sync(),
+  ]);
 };
 
 const findUsers = (params) => {
@@ -130,6 +161,54 @@ const fetchTemplateByName = async (name) => {
   return template;
 };
 
+const fetchColorsList = async () => {
+  const colors = await Color.findAll({ attributes: ["name"], raw: true });
+  return colors;
+};
+
+const AddColor = async (color) => {
+  try {
+    await Color.create({ name: color });
+    return { error: false, message: "Successfully added color" };
+  } catch (err) {
+    return { error: true, message: err };
+  }
+};
+
+const fetchThicknessList = async () => {
+  const thicknessList = await Thickness.findAll({
+    attributes: ["thickness"],
+    raw: true,
+  });
+  return thicknessList;
+};
+
+const AddThickness = async (thickness) => {
+  try {
+    await Thickness.create({ thickness });
+    return { error: false, message: "Successfully added thickness" };
+  } catch (err) {
+    return { error: true, message: err };
+  }
+};
+
+const fetchSizesList = async () => {
+  const sizes = await Size.findAll({
+    attributes: ["length", "breadth"],
+    raw: true,
+  });
+  return sizes;
+};
+
+const AddSize = async ({ length, breadth }) => {
+  try {
+    await Size.create({ length, breadth });
+    return { error: false, message: "Successfully added size" };
+  } catch (err) {
+    return { error: true, message: err };
+  }
+};
+
 module.exports = {
   Sequelize,
   sequelize,
@@ -142,4 +221,10 @@ module.exports = {
   fetchTemplatesList,
   fetchTemplateByName,
   updateUser,
+  fetchColorsList,
+  fetchSizesList,
+  fetchThicknessList,
+  AddSize,
+  AddThickness,
+  AddColor,
 };
