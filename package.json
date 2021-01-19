@@ -5,7 +5,7 @@
   "main": "main.js",
   "build": {
     "appId": "label.generator",
-    "asar": false,
+    "asar": true,
     "productName": "Label Generator",
     "win": {
       "target": "nsis",
