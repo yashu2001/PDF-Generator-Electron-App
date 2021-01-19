@@ -60,6 +60,7 @@ generatePDF.addEventListener("click", async (e) => {
     unit: "mm",
     format: [template.document_height, template.document_width],
   });
+  doc.setProperties({ title: "Labels.pdf" });
   doc.setFontSize(template.font_size);
   const coordinatesArr = JSON.parse(template.coordinates);
   // Inserting data
@@ -68,9 +69,13 @@ generatePDF.addEventListener("click", async (e) => {
     doc.text(dataText, x, y);
   }
   // Generating URI for pdf document
-  const uri = window.URL.createObjectURL(doc.output("blob"));
+  const uri = window.URL.createObjectURL(
+    new File([doc.output("blob")], "Labels.pdf", {
+      type: doc.output("blob").type,
+    })
+  );
   // Displaying PDF
   document.getElementById(
     "pdfParent"
-  ).innerHTML = `<iframe src=${uri}></iframe>`;
+  ).innerHTML = `<iframe src=${uri} type='application/pdf'></iframe>`;
 });

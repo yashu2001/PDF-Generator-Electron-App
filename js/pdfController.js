@@ -102,6 +102,7 @@ generatePDF.addEventListener("click", (e) => {
     format: [height, width],
   });
   doc.setFont("Times New Roman ");
+  doc.setProperties({ title: "Labels.pdf"});
   doc.setFontSize(fontSize);
   // Inserting data
   for (let i = 0; i < Coordinates; i++) {
@@ -111,11 +112,15 @@ generatePDF.addEventListener("click", (e) => {
     doc.text(dataText, x, y);
   }
   // Generating URI for pdf document
-  const uri = window.URL.createObjectURL(doc.output("blob"));
+  const uri = window.URL.createObjectURL(
+    new File([doc.output("blob")], "Labels.pdf", {
+      type: doc.output("blob").type,
+    })
+  );
   // Displaying PDF
   document.getElementById(
     "pdfParent"
-  ).innerHTML = `<iframe src=${uri}></iframe>`;
+  ).innerHTML = `<iframe src=${uri} type='application/pdf'></iframe>`;
 });
 
 // Handles saving templates
