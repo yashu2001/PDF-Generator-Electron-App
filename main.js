@@ -51,14 +51,14 @@ function createWindow(minHeight, minWidth, uri) {
       await DB.createTemplate({
         name: "Label-1",
         document_height: 248,
-        document_width: 165,
-        font_size: 10,
+        document_width: 164,
+        font_size: 9,
         document_orientation: "portrait",
         coordinates: [
-          { x: "25", y: "89" },
-          { x: "100", y: "89" },
-          { x: "25", y: "205" },
-          { x: "100", y: "205" },
+          { x: "22.5", y: "88" },
+          { x: "97.5", y: "88" },
+          { x: "22.5", y: "205" },
+          { x: "97.5", y: "205" },
         ],
       });
       await DB.AddColor("Beige");
