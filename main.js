@@ -61,6 +61,19 @@ function createWindow(minHeight, minWidth, uri) {
           { x: "97.5", y: "205" },
         ],
       });
+      await DB.createTemplate({
+        name: "Label-2",
+        document_height: 297,
+        document_width: 210,
+        font_size: 11,
+        document_orientation: "portrait",
+        coordinates: [
+          { x: "25", y: "110" },
+          { x: "130", y: "110" },
+          { x: "25", y: "262" },
+          { x: "130", y: "262" },
+        ]
+      })
       await DB.AddColor("Beige");
       await DB.AddColor("Rosewood");
       const thicknessarr = [12, 15, 18, 20, 25, 30];
